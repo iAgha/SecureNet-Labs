@@ -1,0 +1,26 @@
+! Basic Switch Configuration for LAN-Port-Security Lab
+enable
+configure terminal
+
+! Configure FastEthernet0/1
+interface FastEthernet0/1
+ switchport mode access
+ switchport port-security
+ switchport port-security maximum 1
+ switchport port-security violation shutdown
+exit
+
+! Configure FastEthernet0/2
+interface FastEthernet0/2
+ switchport mode access
+ switchport port-security
+ switchport port-security maximum 1
+ switchport port-security violation shutdown
+exit
+
+! Optional: show port security status (run in privileged mode)
+! show port-security
+! show port-security interface fa0/1
+
+end
+write memory
